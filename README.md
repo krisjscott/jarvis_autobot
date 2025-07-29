@@ -47,12 +47,12 @@ This file handles:
 ```bash
 git clone https://github.com/krisjscott/jarvis_autobot.git
 cd jarvis_autobot
-
-	2.	Install required packages:
+##
+2. Install required packages:
 
 pip install -r requirements.txt
 
-	3.	Run the GUI:
+3. Run the GUI:
 
 python gui/interface.py
 
