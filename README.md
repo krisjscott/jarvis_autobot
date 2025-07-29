@@ -1,111 +1,81 @@
-# 🤖 Jarvis Autobot
+⸻
+# Jarvis Autobot 🤖
 
-A Python-powered **personal assistant bot** that listens, processes commands, and responds—featuring regex-based conversation handling, modular structure, and ready-to-expand architecture.
+A Python-powered desktop personal assistant with voice recognition, GPT-based responses, and a custom Tkinter GUI interface. Inspired by Marvel's **JARVIS**, this assistant is designed to interact naturally with the user and handle advanced tasks like question-answering, web browsing, and more.
 
-## 👨‍💻 Author
+## 🚀 Features
 
-**Krish Kumar**
-GitHub: [@krisjscott](https://github.com/krisjscott)
+- 🎙️ Voice Recognition (Speech-to-Text and Text-to-Speech)
+- 🧠 GPT-based conversational AI with memory
+- 📚 Question answering using Hugging Face Transformers
+- 🌐 Web interaction and command execution
+- 🖼️ Tkinter-based animated GUI
+- 🧵 Threaded async responses for real-time interaction
+- 🎞️ GIF support and multimedia feedback
+- 🔐 Modular code structure for easy expansion
 
----
+## 📁 Project Structure
 
-## 🐍 Requirements
+jarvis_autobot/
+│
+├── chatbot/
+│   ├── chatbot.py        # Core chatbot logic (GPT + Transformers)
+│
+├── assets/               # GIFs, icons, and images for GUI
+│
+├── gui/
+│   ├── interface.py      # Main Tkinter GUI app
+│
+├── audio/
+│   ├── speech.py         # Voice recognition and TTS
+│
+└── requirements.txt      # Python dependencies
 
-* Python 3.7 or higher
-* Key libraries (install via `pip`):
+## 🧠 `chatbot.py` Overview
 
-  * `speech_recognition`
-  * `pyttsx3`
-  * `regex`
-  * `flask` (if using REST APIs)
-  * Any additional dependencies listed in `requirements.txt`
+This file handles:
+- Loading pre-trained GPT or Transformer models via Hugging Face
+- Tokenizing user input
+- Generating AI responses using models like `gpt2` or `bert`
+- Integrating with pipelines for question-answering and context-based replies
+- (Optionally) memory/contextual support for better conversations
 
----
+## 🛠️ Installation
 
-## ✨ Features
-
-* 🗣️ **Voice and text** input handling using regular expressions
-* 🤖 Multiple Python modules for structured conversation (`general.py`, `quiry.py`, etc.)
-* 🌐 **REST API hooks** to integrate bot functions into web services
-* 🔧 Modular setup: easily add new commands and modules
-
----
-
-## 🚀 Setup & Usage
-
-### 1. Clone the repo
+1. Clone the repo:
 
 ```bash
 git clone https://github.com/krisjscott/jarvis_autobot.git
 cd jarvis_autobot
-```
 
-### 2. Install dependencies
+	2.	Install required packages:
 
-```bash
 pip install -r requirements.txt
-```
 
-### 3. Run the bot
+	3.	Run the GUI:
 
-```bash
-python general.py
-```
+python gui/interface.py
 
-Customize command patterns in `quiry.py` or other modules to fit your use cases.
+🧪 Dependencies
+	•	transformers
+	•	torch / tensorflow
+	•	tkinter
+	•	Pillow
+	•	speechrecognition
+	•	pyaudio
+	•	gTTS
 
----
+(See requirements.txt for full list.)
 
-## 🛠️ Module Overview
 
-* `general.py`: Core entry point — parses input, dispatches commands
-* `quiry.py`: Defines regex-based command-response mappings
-* `utils/*.py`: Utility functions (e.g. text-to-speech, logging, APIs)
+💡 Future Improvements
+	•	Memory buffer for contextual awareness
+	•	Integration with OpenAI API for more powerful models
+	•	Task automation (open apps, control system functions)
+	•	Cloud integration (upload notes, tasks)
 
----
+📝 License
 
-## 🧠 Extending the Bot
+MIT License — feel free to use, modify, and share.
 
-1. Add intent pattern in `quiry.py`:
-
-   ```python
-   (r"tell me a joke", tell_joke)
-   ```
-2. Implement the handler in `general.py` or a new module:
-
-   ```python
-   def tell_joke():
-       speak("Why did the Python developer cross the road? To get to the other side!")
-   ```
-3. Hook into REST: modify `app.route()` in `general.py` to expose APIs.
-
----
-
-## 🧩 Example: Add Weather Command
-
-1. Add regex in `quiry.py`:
-
-   ```python
-   (r"weather in (.*)", get_weather)
-   ```
-2. In `general.py`, implement:
-
-   ```python
-   def get_weather(location):
-       # call weather API, format, and speak the response
-   ```
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Suggestions for new modules, cleaner regex patterns, or improved REST support? Open an issue or PR.
-
----
-
-## 📝 License
-
-[MIT License](LICENSE) — freely use, modify, and distribute.
-
----
-
+⸻
