@@ -121,7 +121,7 @@ Licensed under the **MIT License** — feel free to use, improve, and share.
 
 ## 🙋‍♂️ Author & Contact
 
-Developed with 💡 by **[Krish J. Scott](https://github.com/krisjscott)**
+Developed with 💡 by **[Krisjscott](https://github.com/krisjscott)**
 Feel free to open issues, request features, or contribute via pull requests.
 
 ---
