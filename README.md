@@ -1,81 +1,134 @@
-⸻
-# Jarvis Autobot 🤖
+---
 
-A Python-powered desktop personal assistant with voice recognition, GPT-based responses, and a custom Tkinter GUI interface. Inspired by Marvel's **JARVIS**, this assistant is designed to interact naturally with the user and handle advanced tasks like question-answering, web browsing, and more.
+```markdown
+# 🤖 Jarvis Autobot
 
-## 🚀 Features
+An advanced AI-powered desktop assistant built with Python, featuring natural language conversations, voice command support, and a responsive GUI inspired by Marvel’s JARVIS. The assistant integrates state-of-the-art transformer models to interact intelligently and perform real-time tasks.
 
-- 🎙️ Voice Recognition (Speech-to-Text and Text-to-Speech)
-- 🧠 GPT-based conversational AI with memory
-- 📚 Question answering using Hugging Face Transformers
-- 🌐 Web interaction and command execution
-- 🖼️ Tkinter-based animated GUI
-- 🧵 Threaded async responses for real-time interaction
-- 🎞️ GIF support and multimedia feedback
-- 🔐 Modular code structure for easy expansion
+---
 
-## 📁 Project Structure
+## 🧠 Key Features
 
-jarvis_autobot/
+| Feature                         | Description                                                                 |
+|----------------------------------|-----------------------------------------------------------------------------|
+| 🗣️ Voice Interaction             | Speech-to-Text and Text-to-Speech using `SpeechRecognition` and `gTTS`     |
+| 💬 GPT-Based Conversations      | Chat-like interaction using Hugging Face models like `gpt2`, `bert`, etc.  |
+| 🖼️ Animated GUI                 | Built with `Tkinter`, supports GIFs and smooth animations                  |
+| ⚡ Real-Time Responses           | Multithreaded async processing for snappy interaction                      |
+| 🔍 Question Answering (QA)       | Uses Hugging Face QA pipelines for factual queries                         |
+| 🌐 Web Integration               | Opens URLs, answers web-based queries, and integrates with the browser     |
+| 🎯 Modular Codebase              | Easily expandable and customizable architecture                            |
+
+---
+
+## 📂 Directory Structure
+
+```
+
+jarvis\_autobot/
 │
-├── chatbot/
-│   ├── chatbot.py        # Core chatbot logic (GPT + Transformers)
+├── chatbot/                # Core AI and NLP logic
+│   └── chatbot.py          # GPT/chatbot model interaction
 │
-├── assets/               # GIFs, icons, and images for GUI
+├── gui/                    # UI components
+│   └── interface.py        # Main GUI logic using Tkinter
 │
-├── gui/
-│   ├── interface.py      # Main Tkinter GUI app
+├── audio/                  # Voice control components
+│   └── speech.py           # STT (Speech to Text) and TTS (Text to Speech)
 │
-├── audio/
-│   ├── speech.py         # Voice recognition and TTS
+├── assets/                 # Images, icons, and GIFs
 │
-└── requirements.txt      # Python dependencies
+├── requirements.txt        # List of Python dependencies
+└── README.md               # This file
 
-## 🧠 `chatbot.py` Overview
+````
 
-This file handles:
-- Loading pre-trained GPT or Transformer models via Hugging Face
-- Tokenizing user input
-- Generating AI responses using models like `gpt2` or `bert`
-- Integrating with pipelines for question-answering and context-based replies
-- (Optionally) memory/contextual support for better conversations
+---
 
-## 🛠️ Installation
+## ⚙️ Getting Started
 
-1. Clone the repo:
+### 🔧 Prerequisites
+
+Ensure Python 3.8+ is installed. Then install dependencies:
 
 ```bash
-git clone https://github.com/krisjscott/jarvis_autobot.git
-cd jarvis_autobot
-##
-2. Install required packages:
-
 pip install -r requirements.txt
+````
 
-3. Run the GUI:
+### ▶️ Run the Application
 
+```bash
 python gui/interface.py
+```
 
-🧪 Dependencies
-	•	transformers
-	•	torch / tensorflow
-	•	tkinter
-	•	Pillow
-	•	speechrecognition
-	•	pyaudio
-	•	gTTS
+---
 
-(See requirements.txt for full list.)
+## 📌 About `chatbot.py`
 
+This file manages:
 
-💡 Future Improvements
-	•	Memory buffer for contextual awareness
-	•	Integration with OpenAI API for more powerful models
-	•	Task automation (open apps, control system functions)
-	•	Cloud integration (upload notes, tasks)
+* Model loading from Hugging Face (`AutoModelForCausalLM`, `TFAutoModelForQuestionAnswering`)
+* Tokenizing input for GPT or BERT-style models
+* Generating meaningful replies from AI models
+* (Optional) context memory for enhanced conversations
 
-📝 License
+Example:
 
-MIT License — feel free to use, modify, and share.
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
-⸻
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+model = AutoModelForCausalLM.from_pretrained("gpt2")
+
+inputs = tokenizer("Hello, who are you?", return_tensors="pt")
+outputs = model.generate(**inputs)
+response = tokenizer.decode(outputs[0])
+```
+
+---
+
+## 📸 GUI Preview
+
+> *(Insert GIF/screenshot here for the animated assistant interface)*
+> Tkinter GUI with animated character and real-time interaction.
+
+---
+
+## 🧩 Tech Stack
+
+* Python 3.8+
+* Transformers (`gpt2`, `bert`)
+* TensorFlow / PyTorch (interchangeable)
+* Tkinter (for GUI)
+* SpeechRecognition + gTTS
+* PIL (for animated GIFs)
+* Asyncio + Threading
+
+---
+
+## 🛠️ Upcoming Features
+
+* ✅ Contextual Memory for follow-up understanding
+* ✅ System-level command execution (open apps, control settings)
+* ☁️ Cloud sync (notes, reminders)
+* 🌐 ChatGPT or OpenAI API support
+* 🔐 Wake-word activation and passive listening
+
+---
+
+## 📜 License
+
+Licensed under the **MIT License** — feel free to use, improve, and share.
+
+---
+
+## 🙋‍♂️ Author & Contact
+
+Developed with 💡 by **[Krish J. Scott](https://github.com/krisjscott)**
+Feel free to open issues, request features, or contribute via pull requests.
+
+---
+
+> "I’m not saying I’m JARVIS… but you’ve just activated me."
+
+```
